@@ -38,10 +38,10 @@ public class Main {
 
     // Sort
     List<Person> sorted = people.stream()
-        .sorted(Comparator.comparing(Person::getAge).thenComparing(Person::getGender).reversed())
+        .sorted(Comparator.comparing(Person::getAge).thenComparing(Person::getGender).thenComparing(Person::getName).reversed())
         .collect(Collectors.toList());
 
-//    sorted.forEach(System.out::println);
+    sorted.forEach(System.out::println);
 
     // All match
     boolean allMatch = people.stream()
